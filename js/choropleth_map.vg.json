@@ -4,7 +4,7 @@
   "width": 800,
   "height": 600,
   "data": {
-    "url": "data/world.topojson",
+    "url": "https://raw.githubusercontent.com/achooou/fit3179-testrepo/main/js/data/world.topojson",
     "format": {
       "type": "topojson",
       "feature": "world.topo"
@@ -26,7 +26,7 @@
           "lookup": "properties.adm0_a3",
           "from":{
             "data":{
-              "url": "data/data.csv"
+              "url": "https://raw.githubusercontent.com/achooou/fit3179-testrepo/main/js/data/data.csv"
             },
             "key": "LOCATION",
             "fields": ["Value"]
