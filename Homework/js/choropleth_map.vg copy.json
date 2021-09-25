@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Worldwide Beef Consumption 2018",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "data/world.topojson",
+    "format": {
+      "type": "topojson",
+      "feature": "world.topo"
+    }
+  },
+  "projection": {
+    "type": "equirectangular"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgrey",
+        "stroke": "white"
+      }
+    },
+    {"transform": [
+        {
+          "lookup": "properties.adm0_a3",
+          "from":{
+            "data":{
+              "url": "data/data.csv"
+            },
+            "key": "LOCATION",
+            "fields": ["Value"]
+          }
+        }
+      ],
+      "projection": {
+        "type": "equirectangular"
+      },
+      "mark": {
+        "type": "geoshape"
+      },
+      "encoding":{
+        "color": {
+          "field":"Value",
+          "type": "quantitative",
+          "title": "Kg consumed per capita"
+        },
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "Country"},
+          {"field": "Value", "type": "quantitative", "title": "KG consumption per capita"}
+        ]
+      }
+    }
+  ]
+}
