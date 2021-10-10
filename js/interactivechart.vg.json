@@ -6,7 +6,7 @@
     "vconcat": [
         
         {
-            "width": "container",
+            "width": "600",
             "title": "Total meat consumption worldwide in thousand tonnes per year",
             "mark": "line",
             "encoding": {
@@ -21,7 +21,7 @@
                 }
         },
         {
-            "width": "container",
+            "width": "600",
             "height": 60,
             "mark": "line",
             "title": "Use this line chart to filter out the data based on time",
