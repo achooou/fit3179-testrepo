@@ -3,10 +3,11 @@
     "data": {
         "url": "https://raw.githubusercontent.com/achooou/fit3179-testrepo/main/js/data/data2.csv"
     },
+    
     "vconcat": [
         
-        {
-            "width": "600",
+        {"layer":[{
+            "width": "800",
             "title": "Total meat consumption worldwide in thousand tonnes per year",
             "mark": "line",
             "encoding": {
@@ -17,11 +18,31 @@
                     "axis": { "title": "", "tickCount": 5, "grid": false }
                 },
                 "y": { "aggregate": "sum", "field":"Value","title": "thousand tonnes" }
-                
+                ,
+            "tooltip": [
+                {"aggregate": "sum","field": "Value", "type": "quantitative", "title": "consumption in thousand tonnes","format": ".2f"
+              }]
                 }
-        },
+        },{
+            "width": "800",
+            "title": "Total meat consumption worldwide in thousand tonnes per year",
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "TIME",
+                    "timeUnit": "year",
+                    "scale": { "domain": { "param": "time_brush" } },
+                    "axis": { "title": "", "tickCount": 5, "grid": false }
+                },
+                "y": { "aggregate": "sum", "field":"Value","title": "thousand tonnes" }
+                ,
+            "tooltip": [
+                {"aggregate": "sum","field": "Value", "type": "quantitative", "title": "consumption in thousand tonnes","format": ".2f"
+              }]
+                }
+        }]},
         {
-            "width": "600",
+            "width": "800",
             "height": 60,
             "mark": "line",
             "title": "Use this line chart to filter out the data based on time",
