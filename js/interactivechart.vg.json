@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/achooou/fit3179-testrepo/main/js/data/data2.csv"
+    },
+    "vconcat": [
+        
+        {
+            "width": "container",
+            "title": "Total meat consumption worldwide in thousand tonnes per year",
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "TIME",
+                    "timeUnit": "year",
+                    "scale": { "domain": { "param": "time_brush" } },
+                    "axis": { "title": "", "tickCount": 5, "grid": false }
+                },
+                "y": { "aggregate": "sum", "field":"Value","title": "thousand tonnes" }
+                
+                }
+        },
+        {
+            "width": "container",
+            "height": 60,
+            "mark": "line",
+            "title": "Use this line chart to filter out the data based on time",
+            "params": [{
+                "name": "time_brush",
+                "select": { "type": "interval", "encodings": ["x"] }
+            }],
+            "encoding": {
+                "x": {
+                    "field": "TIME",
+                    "timeUnit": "year",
+                    "axis": { "title": "", "format": "%Y" }
+                },
+                "y": {
+                    "field" : "Value",
+                    "aggregate": "sum",
+                    "axis": { "tickCount": 3, "grid": false },
+                    "title": "thousand tonnes"
+                }
+            }
+        }
+        
+    ],
+    "config": { "title": { "font": "sans-serif", "fontSize": 14 } }
+}
